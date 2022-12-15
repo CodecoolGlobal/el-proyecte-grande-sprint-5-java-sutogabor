@@ -17,4 +17,7 @@ public class TaskController {
         taskService.addTask(newTask);
     }
 
+    @GetMapping("/{id}")
+    public Task getTaskById(@PathVariable("id") Long id) { return taskService.getTaskById(id); }
+
 }
