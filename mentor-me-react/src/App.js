@@ -1,7 +1,16 @@
+import Header from "./Header";
+import {useState} from "react";
+
 function App() {
-  return (
+    const [isLogged, setIsLogged] = useState(true);
+
+    return (
     <div className="App">
-      <h1>Mentor Me</h1>
+        <Header
+            logo="logo"
+            title="Mentor Me"
+            isLogged={isLogged}
+        />
     </div>
   );
 }
