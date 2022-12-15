@@ -21,5 +21,9 @@ public class TaskService {
         taskRepository.save(task);
     }
 
+    public Task getTaskById(Long id) {
+        return taskRepository.getById(id);
+    }
+
 
 }
