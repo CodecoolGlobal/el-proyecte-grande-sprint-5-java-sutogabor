@@ -22,7 +22,6 @@ public class Answer {
             strategy = GenerationType.SEQUENCE,
             generator = "answer_sequence"
     )
-    @JsonIgnore
     @Id
     private Long id;
     private String message;
