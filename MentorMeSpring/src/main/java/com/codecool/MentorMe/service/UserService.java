@@ -25,5 +25,12 @@ public class UserService {
         return userRepository.existsById(id);
     }
 
+    public User getUserById(Long id) {
+        if(!checkIfUserExists(id)) {
+            throw new EntityNotFoundException("User not found at ID: " + id);
+        }
+        return userRepository.getById(id);
+    }
+
 
 }
