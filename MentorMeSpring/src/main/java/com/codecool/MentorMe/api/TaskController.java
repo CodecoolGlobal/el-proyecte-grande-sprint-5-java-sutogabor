@@ -28,4 +28,7 @@ public class TaskController {
         taskService.updateTaskById(id, updatedTask);
     }
 
+    @GetMapping
+    public Task getRandomTask() { return taskService.getRandomTask(); }
+
 }
