@@ -34,5 +34,9 @@ public class TaskService {
         taskRepository.save(updatedTask);
     }
 
-
+    public Task getRandomTask() {
+        List<Task> availableTasks = getAllTasks().stream().filter(task -> !task.isCompleted()).toList();
+        Random random = new Random();
+        return availableTasks.get(random.nextInt(availableTasks.size()));
+    }
 }
