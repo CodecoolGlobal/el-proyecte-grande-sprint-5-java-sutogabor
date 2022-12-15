@@ -1,4 +1,7 @@
 package com.codecool.MentorMe.repository;
 
-public class AnswerRepository {
+import com.codecool.MentorMe.model.Answer;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AnswerRepository extends JpaRepository<Answer, Long> {
 }
