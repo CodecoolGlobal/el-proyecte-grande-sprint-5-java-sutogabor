@@ -33,5 +33,6 @@ public class UserController {
         us.deleteUserById(id);
     }
 
-
+    @PostMapping
+    public void addUser(@RequestBody User user) { us.addUser(user); }
 }
