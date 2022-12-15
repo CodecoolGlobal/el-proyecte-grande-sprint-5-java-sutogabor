@@ -1,10 +1,10 @@
 import React from "react";
 import "../assets/css/Result.css";
 
-const Result = () => {
+const Result = ({score}) => {
     return <div className="result">
-        <h1>Final Result</h1>
-        <h2>X out of Y</h2>
+        <h1>Your Score</h1>
+        <h2>{score}</h2>
         <button>Again?</button>
     </div>
 }

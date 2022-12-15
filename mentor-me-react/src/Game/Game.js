@@ -5,10 +5,9 @@ import Codecooler from "./Codecooler";
 
 import "../assets/css/Game.css";
 
-const Game = ({score, currentQuestion, fetchQuestion, showErrMsg}) => {
+const Game = ({currentQuestion, fetchQuestion, showErrMsg}) => {
     return <main>
         <Quiz
-            score={score}
             currentQuestion={currentQuestion}
             fetchQuestion={fetchQuestion}
             showErrMsg={showErrMsg}

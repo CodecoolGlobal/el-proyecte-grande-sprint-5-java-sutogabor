@@ -9,13 +9,12 @@ function App() {
     const [isLogged, setIsLogged] = useState(true);
     const [showErrMsg, setShowErrMsg] = useState(null);
     const [currentQuestion, setCurrentQuestion] = useState();
-    const [score, setScore] = useState(0);
 
     const fetchQuestion = async () => {
         try {
-            const res = await fetch("http://localhost:3500/questions");
-            const questions = await res.json();
-            setCurrentQuestion(questions[Math.floor(Math.random() * questions.length)]);
+            const res = await fetch(API_URL_BASE + "/task");
+            const question = await res.json();
+            setCurrentQuestion(question);
             if (res.ok) {
                 setShowErrMsg(true);
             } else {
@@ -40,7 +39,6 @@ function App() {
         />
         { isLogged
             ? <Game
-                score={score}
                 currentQuestion={currentQuestion}
                 fetchQuestion={fetchQuestion}
                 showErrMsg={showErrMsg}
