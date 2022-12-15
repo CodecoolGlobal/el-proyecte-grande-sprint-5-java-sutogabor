@@ -21,5 +21,9 @@ public class UserService {
 
     public List<User> getAllUsers() { return userRepository.findAll(); }
 
+    private boolean checkIfUserExists(Long id) {
+        return userRepository.existsById(id);
+    }
+
 
 }
