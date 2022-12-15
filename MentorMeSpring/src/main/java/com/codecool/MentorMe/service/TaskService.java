@@ -37,6 +37,8 @@ public class TaskService {
     public Task getRandomTask() {
         List<Task> availableTasks = getAllTasks().stream().filter(task -> !task.isCompleted()).toList();
         Random random = new Random();
-        return availableTasks.get(random.nextInt(availableTasks.size()));
+        Task taskToSend = availableTasks.get(random.nextInt(availableTasks.size()));
+        taskToSend.setCompleted(true);
+        return taskToSend;
     }
 }
