@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Result from "./Result";
 
-const QuestionCard = ({currentQuestion, fetchQuestion}) => {
+const QuestionCard = ({showResult, currentQuestion, fetchQuestion}) => {
     const [score, setScore] = useState(0);
 
     const fetchAnswer = async (id) => {
@@ -24,7 +24,7 @@ const QuestionCard = ({currentQuestion, fetchQuestion}) => {
     }
 
     return <>
-        {currentQuestion ?
+        {!showResult ?
             <div className="question-card">
                 <h2>{currentQuestion.message}</h2>
                 <ul>

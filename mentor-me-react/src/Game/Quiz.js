@@ -3,7 +3,7 @@ import "../assets/css/Quiz.css";
 import QuestionCard from "./QuestionCard";
 
 
-const Quiz = ({currentQuestion, fetchQuestion, showErrMsg}) => {
+const Quiz = ({showResult, currentQuestion, fetchQuestion, showErrMsg}) => {
 
     return <div className="question-container">
         <h1>Insert Module Name</h1>
@@ -12,6 +12,7 @@ const Quiz = ({currentQuestion, fetchQuestion, showErrMsg}) => {
             <QuestionCard
                 currentQuestion={currentQuestion}
                 fetchQuestion={fetchQuestion}
+                showResult={showResult}
             />
             :
             <div>

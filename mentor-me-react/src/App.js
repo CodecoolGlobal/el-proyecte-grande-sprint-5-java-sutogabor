@@ -8,18 +8,30 @@ function App() {
     const API_URL_BASE = "http://localhost:8080";
     const [isLogged, setIsLogged] = useState(true);
     const [showErrMsg, setShowErrMsg] = useState(null);
-    const [currentQuestion, setCurrentQuestion] = useState();
+    const [currentQuestion, setCurrentQuestion] = useState(null);
+    const [showResult, setShowResult] = useState(null);
 
     const fetchQuestion = async () => {
         try {
             const res = await fetch(API_URL_BASE + "/task");
             const question = await res.json();
-            setCurrentQuestion(question);
+
+            console.log(question);
+
             if (res.ok) {
                 setShowErrMsg(true);
             } else {
                 setShowErrMsg(false);
             }
+
+            if (question.message == null) {
+                setShowResult(true);
+            } else {
+                setShowResult(false);
+                setCurrentQuestion(question);
+            }
+
+
         } catch (err) {
             console.log(err);
         }
@@ -42,6 +54,7 @@ function App() {
                 currentQuestion={currentQuestion}
                 fetchQuestion={fetchQuestion}
                 showErrMsg={showErrMsg}
+                showResult={showResult}
             />
             : <Home />
         }
