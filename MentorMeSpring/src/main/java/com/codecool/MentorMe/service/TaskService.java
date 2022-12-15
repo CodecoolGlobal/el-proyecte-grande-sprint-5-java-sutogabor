@@ -25,5 +25,9 @@ public class TaskService {
         return taskRepository.getById(id);
     }
 
+    public List<Task> getAllTasks() {
+        return taskRepository.findAll();
+    }
+
 
 }
