@@ -20,4 +20,12 @@ public class TaskController {
     @GetMapping("/{id}")
     public Task getTaskById(@PathVariable("id") Long id) { return taskService.getTaskById(id); }
 
+    @GetMapping("/{id}")
+    public Task getTaskById(@PathVariable("id") Long id) { return taskService.getTaskById(id); }
+
+    @PutMapping("/{id}")
+    public void updateTaskById(@PathVariable("id") Long id, @RequestBody Task updatedTask) {
+        taskService.updateTaskById(id, updatedTask);
+    }
+
 }
