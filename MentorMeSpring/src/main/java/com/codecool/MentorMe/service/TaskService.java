@@ -29,5 +29,10 @@ public class TaskService {
         return taskRepository.findAll();
     }
 
+    public void updateTaskById(Long id, Task updatedTask){
+        updatedTask.setId(id);
+        taskRepository.save(updatedTask);
+    }
+
 
 }
