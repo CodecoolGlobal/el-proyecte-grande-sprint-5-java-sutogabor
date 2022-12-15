@@ -39,6 +39,7 @@ public class TaskService {
         Random random = new Random();
         Task taskToSend = availableTasks.get(random.nextInt(availableTasks.size()));
         taskToSend.setCompleted(true);
+        updateTaskById(taskToSend.getId(), taskToSend);
         return taskToSend;
     }
 }
