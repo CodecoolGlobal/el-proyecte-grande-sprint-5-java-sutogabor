@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import Result from "./Result";
 
-const QuestionCard = ({showResult, currentQuestion, fetchQuestion}) => {
+const QuestionCard = ({currentQuestion, fetchQuestion}) => {
     const fetchAnswer = async (id) => {
         try {
             const res = await fetch(`http://localhost:8080/task/${id}`);

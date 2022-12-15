@@ -7,7 +7,7 @@ import Game from "./Game/Game";
 function App() {
     const API_URL_BASE = "http://localhost:8080";
     const [isLogged, setIsLogged] = useState(true);
-    const [showResult, setShowResult] = useState(false);
+    const [showErrMsg, setShowErrMsg] = useState(null);
     const [currentQuestion, setCurrentQuestion] = useState();
     const [score, setScore] = useState(0);
 
@@ -16,7 +16,11 @@ function App() {
             const res = await fetch("http://localhost:3500/questions");
             const questions = await res.json();
             setCurrentQuestion(questions[Math.floor(Math.random() * questions.length)]);
-            console.log("response is " + res.ok);
+            if (res.ok) {
+                setShowErrMsg(true);
+            } else {
+                setShowErrMsg(false);
+            }
         } catch (err) {
             console.log(err);
         }
@@ -36,10 +40,10 @@ function App() {
         />
         { isLogged
             ? <Game
-                showResult={showResult}
                 score={score}
                 currentQuestion={currentQuestion}
                 fetchQuestion={fetchQuestion}
+                showErrMsg={showErrMsg}
             />
             : <Home />
         }

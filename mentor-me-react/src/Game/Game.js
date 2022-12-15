@@ -5,13 +5,13 @@ import Codecooler from "./Codecooler";
 
 import "../assets/css/Game.css";
 
-const Game = ({showResult, score, currentQuestion, fetchQuestion}) => {
+const Game = ({score, currentQuestion, fetchQuestion, showErrMsg}) => {
     return <main>
         <Quiz
-            showResult={showResult}
             score={score}
             currentQuestion={currentQuestion}
             fetchQuestion={fetchQuestion}
+            showErrMsg={showErrMsg}
         />
         <Codecooler />
     </main>

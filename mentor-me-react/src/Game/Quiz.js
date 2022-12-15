@@ -3,15 +3,15 @@ import "../assets/css/Quiz.css";
 import QuestionCard from "./QuestionCard";
 
 
-const Quiz = ({showResult, score, currentQuestion, fetchQuestion}) => {
+const Quiz = ({score, currentQuestion, fetchQuestion, showErrMsg}) => {
     // const showResult = useContext(resultContext);
+    console.log(fetchQuestion);
 
     return <div className="question-container">
         <h1>Insert Module Name</h1>
         <h2>Current Score: {score}</h2>
-        {fetchQuestion ?
+        {showErrMsg ?
             <QuestionCard
-                showResult={showResult}
                 currentQuestion={currentQuestion}
                 fetchQuestion={fetchQuestion}
             />
