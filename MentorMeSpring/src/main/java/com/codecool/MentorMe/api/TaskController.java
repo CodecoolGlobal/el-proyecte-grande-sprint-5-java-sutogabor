@@ -5,11 +5,13 @@ import com.codecool.MentorMe.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
+@RequestMapping("/task")
 public class TaskController {
     private TaskService taskService;
     @Autowired
-    public TaskController(TaskService ts) {
-        this.taskService = ts;
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
     }
 
     @PostMapping

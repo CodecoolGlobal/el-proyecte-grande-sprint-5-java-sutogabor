@@ -3,7 +3,9 @@ package com.codecool.MentorMe.service;
 import com.codecool.MentorMe.model.Solution;
 import com.codecool.MentorMe.repository.SolutionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SolutionService {
     private final SolutionRepository solutionRepository;
 
