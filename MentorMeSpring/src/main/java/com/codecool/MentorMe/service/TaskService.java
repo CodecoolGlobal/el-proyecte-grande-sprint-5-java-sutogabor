@@ -5,6 +5,7 @@ import com.codecool.MentorMe.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -37,8 +38,10 @@ public class TaskService {
     public Task getRandomTask() {
         List<Task> availableTasks = getAllTasks().stream().filter(task -> !task.isCompleted()).toList();
         Random random = new Random();
+
         if (availableTasks.isEmpty()) {
-            return null;
+            Task taskToSend = new Task();
+            return taskToSend;
         } else {
             Task taskToSend = availableTasks.get(random.nextInt(availableTasks.size()));
             taskToSend.setCompleted(true);
