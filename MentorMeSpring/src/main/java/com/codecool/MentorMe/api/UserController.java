@@ -20,5 +20,8 @@ public class UserController {
         return us.getAllUsers();
     }
 
+    @GetMapping("/{id}")
+    public User getUserById(@PathVariable("id") Long id) { return us.getUserById(id); }
+
 
 }
