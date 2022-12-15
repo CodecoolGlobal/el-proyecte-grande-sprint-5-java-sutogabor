@@ -3,10 +3,12 @@ package com.codecool.MentorMe.service;
 import com.codecool.MentorMe.model.User;
 import com.codecool.MentorMe.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
+@Service
 public class UserService {
     private UserRepository userRepository;
 
