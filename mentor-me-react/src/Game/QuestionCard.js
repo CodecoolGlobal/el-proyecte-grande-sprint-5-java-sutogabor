@@ -36,7 +36,9 @@ const QuestionCard = ({showResult, currentQuestion, fetchQuestion}) => {
                 </ul>
             </div>
             : <Result
+                fetchQuestion={fetchQuestion}
                 score={score}
+                setScore={setScore}
             />
         }
     </>
