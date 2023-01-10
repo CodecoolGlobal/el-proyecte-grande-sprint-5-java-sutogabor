@@ -49,4 +49,13 @@ public class TaskService {
             return taskToSend;
         }
     }
+
+    public void setTasksToUncompleted() {
+        List<Task> tasks = taskRepository.findAll();
+        tasks.forEach(task -> {
+                    task.setCompleted(true);
+                    updateTaskById(task.getId(), task);
+        }
+        );
+    }
 }

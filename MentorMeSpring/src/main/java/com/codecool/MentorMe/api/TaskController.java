@@ -5,6 +5,8 @@ import com.codecool.MentorMe.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/task")
 @CrossOrigin(origins = "http://localhost:3000")
@@ -20,6 +22,11 @@ public class TaskController {
         taskService.addTask(newTask);
     }
 
+    @GetMapping("/all")
+    public List<Task> getAllTasks() {
+        return taskService.getAllTasks();
+    }
+
     @GetMapping("/{id}")
     public Task getTaskById(@PathVariable("id") Long id) { return taskService.getTaskById(id); }
 
@@ -31,4 +38,8 @@ public class TaskController {
     @GetMapping
     public Task getRandomTask() { return taskService.getRandomTask(); }
 
+    @GetMapping("/uncompleted")
+    public void setTasksToUncompleted() {
+        taskService.setTasksToUncompleted();
+    }
 }
